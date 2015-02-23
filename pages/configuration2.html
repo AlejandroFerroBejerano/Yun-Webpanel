@@ -1,0 +1,66 @@
+<!-- configuration.html -->
+<div style="overflow-y: auto; height:400px;">
+<!-- Config Tabs  -->
+	<section ng-controller="TabController as tab">
+		<ul class="nav nav-pills">
+			<li ng-class="{ active:tab.isSet(1) }">
+				<a href="" ng-click="tab.setTab(1)">Add Element</a>
+			</li>
+			<li ng-class="{ active:tab.isSet(2) }">
+				<a href="" ng-click="tab.setTab(2)">Edit Element</a>
+			</li>
+		</ul>
+
+		<!-- Add Element Tab's Content  -->
+		<div ng-show="tab.isSet(1)">
+    	<!--  Adding Button Form -->
+			<h3>Add a new button to Yún-WebPanel</h3>
+			<form name="addingButtonForm" ng-controller="configController as configCtrl" ng-submit="configCtrl.addButton(button)">
+			<!-- Config Form -->
+				<table style="width:100%">
+					<tr>
+						<td style="width:20%"><h4>Id Button: </h4></td>
+						<td style="width:50%">
+							<fieldset class="form-group" style="width:30%">
+								<input type="number" ng-model="button.id" class="form-control" placeholder="13" min="1" max="13" title="idButton" />
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td><h4>Description: </h4></td>
+						<td>
+							<fieldset class="form-group">
+								<input type="textarea" ng-model="button.description" class="form-control" placeholder="Comedor " title="Description" />
+							</fieldset>
+						</td>
+					</tr>
+				</table>
+				<fieldset class="form-group">
+							<input type="submit" class="btn btn-primary pull-right" value="Add Button" />
+				</fieldset>
+			</form>
+		</div>
+
+	<!--  Edit Element Tab's Content  -->
+		<div ng-show="tab.isSet(2)">
+			<div ng-controller="panelController as panelCtrl">
+				<div ng-repeat="button in panelCtrl.buttons">
+		<!--  Configuration Form -->
+					<form name="configurationForm" ng-submit="panelCtrl.addDescription(button)">
+						<!--  Live Preview -->
+						<div>
+							<h3>Button Id: {{button.idButton}} Description: {{button.description}}</h3>
+						</div>
+						<!-- Config Form -->
+						<fieldset class="form-group">
+							<input style="width:70%" type="text" ng-model="button.description" class="form-control" placeholder="Comedor" title="description" />
+						</fieldset>
+						<fieldset class="form-group">
+							<input style="padding-rigth:10" type="submit" class="btn btn-primary pull-right" value="Submit Description" />
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

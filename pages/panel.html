@@ -1,0 +1,27 @@
+<!-- panel.html -->
+<div style="overflow-y: scroll; height:400px;">
+<div ng-controller="panelController as panelCrtl">
+<div class="inner cover" ng-repeat="button in panelCrtl.buttons">
+	<table style="width: 100%">
+	<tr>
+		<td align="left" style="width: 20%">
+				<div class="onoffswitch" >
+	    		<input type="checkbox" name="{{button.idButton}}" class="onoffswitch-checkbox" id="{{button.idButton}}" ng-click="buttonClick(button)" ng-checked="{{button.state}}">
+			</input>	
+		    	<label class="onoffswitch-label" for="{{button.idButton}}">
+	    		<span class="onoffswitch-inner"></span>
+	    		<span class="onoffswitch-switch"></span>
+	    		</label>
+	   	</div> 
+		</td>
+		<td align="left">
+			<div class="onoffdescr">
+		<h4 class="onoffh1">Interruptor: {{button.idButton}}</h4>
+		<h5 class="onoffh2">Descripcion: {{button.description}}</h5>	
+		</div>
+		</td>
+	</tr>
+	</table>
+</div>
+</div>
+

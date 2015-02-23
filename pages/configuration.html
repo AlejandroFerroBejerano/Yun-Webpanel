@@ -1,0 +1,20 @@
+<!-- configuration.html -->
+<div style="overflow-y: auto; height:400px; width:125%">
+<div ng-controller="panelController">
+	<h3>¿Por qué no usar BBDD?</h3>
+	<p align="left">
+Hay que destacar que el Arduino-Yún al no tener muchas entradas y ser sus recursos tanto de memoria como de procesamiento limitados, resulta ineficiente y complicado la intalación y usos de sistemas gestores de bases de datos. Además este proyecto está pensado para que cualquier persona solo con copiar en la estructura de directorios los archivos del proyecto y habiendo cargado el código de ejemplo de la librería bridge puedan hacer uso del mismo sin mayor contratiempo.
+	</p>
+	<h3>¿Cómo lograr persistencia?</h3>
+	<p align="left">Para lograr tener persistencia de datos se ha decidido usar el método más sencillo y factible, <strong>ficheros</strong>.</p>
+	<h3>¿Cómo editar y cambiar nuestra configuración?</h3>
+	<p align="left">1. Acceder por ssh a la estructura de directorios donde se encuentra el proyecto</strong></p>
+	<p align="left">2. Abrir el archivo <strong>sj/script.js</strong> a partir de la línea <strong>40 a la 48</strong></p>
+	<p align="left">3. Editarlas entradas como se muestra a continuación:</p>
+	<p align="left"><strong>{idButton:'13', state:false ,mode:'output' ,type:'digital' ,description:'Comedor'},</strong></p>
+	<p align="left"><strong>{idButton:'12', state:false ,mode:'output' ,type:'digital' ,description:'Salon'},</strong></p>
+	
+	
+</div>
+</div>
+
